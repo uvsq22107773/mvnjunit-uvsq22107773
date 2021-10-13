@@ -23,43 +23,50 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 
 À chaque étape, validez vos modifications avec `git` et si nécessaire, exécutez le cycle maven adapté pour vérifier vos manipulations.
 
-1.  Quelles conventions utilise Maven pour l’arborescence des répertoires ?
+1. Quelles conventions utilise Maven pour l’arborescence des répertoires ?
     Où se trouvent les sources de l'application et les sources des tests ?
-1.  Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
-    1.  Dans quel répertoire se trouvent les fichiers sources du projet ? Les sources des tests ?
+2. Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
+    1. Dans quel répertoire se trouvent les fichiers sources du projet ? Les sources des tests ?
+       les fichiers source du projet : src/Main/java
+       les fichiers source du test : src/test/java
+    2. Quelles sont les coordonnées du projet ?
+       <modelVersion>4.0.0</modelVersion>
+       <groupId>fr.uvsq.cprog</groupId>
+       <artifactId>mvnjunit</artifactId>
+       <version>1.0-SNAPSHOT</version>
+       <name>mvnjunit</name>
+    3. À quoi sert la propriété `project.build.sourceEncoding` ?
+        > specifier le codage des caracteres
+    4. Quelles versions des sources et de la JVM sont utilisés ?
+        1.7 7 jvm
+    5. Quelle version de JUnit est configurée ? À quoi sert la balise `scope` ?
+        JUnit : 4.11
+    6. À quoi sert la section `pluginManagement` ?
+       est un élément qui fait La gestion des plugins contient les éléments des plugins de la même manière
+3. Modifiez la configuration du projet de la façon suivante :
+    1. fixez la version des sources et des .class pour utiliser la version 11 de Java
+       <maven.compiler.source>1.11</maven.compiler.source>
+    2. utilisez la dernière version stable de JUnit 4 (cf. [MVNRepository](https://mvnrepository.com/))
+4. Ajoutez un fichier `.gitignore` adapté aux projets Maven (cf. [A collection of .gitignore templates](https://github.com/github/gitignore)) et ajoutez-y les fichiers et répertoires de votre IDE.
+5. Quelle commande Maven permet de :
+    1. créer un `jar` du projet ?
+        mvn package
+        il a cree le fichier executable jar mvnjunit-1.0-SNAPSHOT.jar
+    2. lancer les tests ?
         > RÉPONDRE ICI
-    1. Quelles sont les coordonnées du projet ?
+    3. supprimer tous les fichiers issus de la compilation ?
         > RÉPONDRE ICI
-    1. À quoi sert la propriété `project.build.sourceEncoding` ?
-        > RÉPONDRE ICI
-    1. Quelles versions des sources et de la JVM sont utilisés ?
-        > RÉPONDRE ICI
-    1. Quelle version de JUnit est configurée ? À quoi sert la balise `scope` ?
-        > RÉPONDRE ICI
-    1. À quoi sert la section `pluginManagement` ?
-        > RÉPONDRE ICI
-1.  Modifiez la configuration du projet de la façon suivante :
-    1.  fixez la version des sources et des .class pour utiliser la version 11 de Java
-    1.  utilisez la dernière version stable de JUnit 4 (cf. [MVNRepository](https://mvnrepository.com/))
-1.  Ajoutez un fichier `.gitignore` adapté aux projets Maven (cf. [A collection of .gitignore templates](https://github.com/github/gitignore)) et ajoutez-y les fichiers et répertoires de votre IDE.
-1.  Quelle commande Maven permet de :
-    1.  créer un `jar` du projet ?
-        > RÉPONDRE ICI
-    1. lancer les tests ?
-        > RÉPONDRE ICI
-    1. supprimer tous les fichiers issus de la compilation ?
-        > RÉPONDRE ICI
-1.  Ajoutez une classe `Fraction` et une classe `FractionTest` dans les répertoires et packages appropriés.
+6. Ajoutez une classe `Fraction` et une classe `FractionTest` dans les répertoires et packages appropriés.
     Supprimez les classes d'exemple `App` et `AppTest`.
-1.  Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
+7. Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
     > RÉPONDRE ICI
-1.  Pour chaque cas de test,
+8. Pour chaque cas de test,
     1. écrivez le test JUnit correspondant dans la classe de test,
     1. vérifiez qu’il échoue,
     1. implémentez la fonctionnalité dans la classe,
     1. vérifiez que le test passe,
     1. appliquez un étape de refactoring sur les tests et la classe si nécessaire.
-1.  Modifiez le POM pour intégrer la vérification des conventions de codage avec [`checkstyle`](http://maven.apache.org/plugins/maven-checkstyle-plugin/) en utilisant les conventions _Google_.
-1.  Ajoutez une méthode `main` qui démontre quelques fonctionnalités de la classe, puis modifiez le POM pour que le jar généré soit exécutable (cf. [Apache Maven JAR Plugin](https://maven.apache.org/plugins/maven-jar-plugin/index.html))
-1.  Modifiez la méthode `main` pour que les différents affichages se fassent à l'aide de la bibliothèque de logging [`SLF4J`](http://www.slf4j.org/)
-1. En utilisant le plugin [assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) (ou le plugin [shade](https://maven.apache.org/plugins/maven-shade-plugin/)), générez une archive du projet contenant ses dépendances (uber-jar)
+9. Modifiez le POM pour intégrer la vérification des conventions de codage avec [`checkstyle`](http://maven.apache.org/plugins/maven-checkstyle-plugin/) en utilisant les conventions _Google_.
+10. Ajoutez une méthode `main` qui démontre quelques fonctionnalités de la classe, puis modifiez le POM pour que le jar généré soit exécutable (cf. [Apache Maven JAR Plugin](https://maven.apache.org/plugins/maven-jar-plugin/index.html))
+11. Modifiez la méthode `main` pour que les différents affichages se fassent à l'aide de la bibliothèque de logging [`SLF4J`](http://www.slf4j.org/)
+12. En utilisant le plugin [assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) (ou le plugin [shade](https://maven.apache.org/plugins/maven-shade-plugin/)), générez une archive du projet contenant ses dépendances (uber-jar)

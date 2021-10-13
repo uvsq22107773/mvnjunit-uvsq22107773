@@ -1,0 +1,4 @@
+*.log
+pom.xml
+.gitignore
+.idea/*
