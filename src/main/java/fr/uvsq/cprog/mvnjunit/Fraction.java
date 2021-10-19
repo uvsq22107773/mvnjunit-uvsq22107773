@@ -19,9 +19,11 @@ public class Fraction {
         this.den = 1;
     }
 
-    String toStringg(){
+    @Override
+    public String toString(){
         return this.num+" / "+this.den;
     }
+
     double toDouble(){
         return (double)this.num/this.den;
     }
