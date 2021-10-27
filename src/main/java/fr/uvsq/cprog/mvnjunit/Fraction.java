@@ -1,5 +1,9 @@
 package fr.uvsq.cprog.mvnjunit;
 
+import java.util.Objects;
+
+import static jdk.nashorn.internal.objects.Global.print;
+
 public class Fraction {
     private int num;
     private int den;
@@ -41,12 +45,26 @@ public class Fraction {
         }
     }
 
-    public boolean equals(Fraction fr){
-        if ((reduite(this.num ,this.den).num==reduite(fr.num,fr.den).num) && (reduite(this.num ,this.den).den==reduite(fr.num,fr.den).den) ){
-            return true;
-        }else{
+    @Override
+    public boolean equals(Object fr){
+        if (fr == null){
+            return false;
+        }if(!(fr instanceof Fraction)){
             return false;
         }
+
+        Fraction frr = (Fraction)fr;
+        if ((reduite(this.num ,this.den).num==reduite(frr.num,frr.den).num) && (reduite(this.num ,this.den).den==reduite(frr.num,frr.den).den) ){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(num, den);
     }
 
     public int compareTo(Fraction fr){
