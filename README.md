@@ -39,6 +39,7 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
        > <artifactId>mvnjunit</artifactId>
        > <version>1.0-SNAPSHOT</version>
        > <name>mvnjunit</name>
+       
     3. À quoi sert la propriété `project.build.sourceEncoding` ?
         configure le codage du projet en maven, 
         > dans notre project 'UTF-8' est specifie
