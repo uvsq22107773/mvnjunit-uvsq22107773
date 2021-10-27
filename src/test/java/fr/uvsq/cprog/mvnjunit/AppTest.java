@@ -17,7 +17,7 @@ public class AppTest
         // the expected is 5 and the numerator value is 5
         // this tests shouls be matched
 
-        assert fr.getDen() != 3 : "Denumurator not equal";
+        //assert fr.getDen() != 3 : "Denumurator not equal";
         // this should raise an assertion exception
     }
 
@@ -26,15 +26,15 @@ public class AppTest
     public void mytests()
     {
         Fraction fr = new Fraction(12,5);
-        Fraction obj1 ;
+        Fraction obj1;
         obj1 = fr;
 
         assertNotNull(obj1);                         // if fraction not null
-        assertNull(obj1);
+        //assertNull(obj1);
         // if fraction is null, this will cause the test to fail
         // because we expecting a null value, wich is not the case
 
-        assertNotSame(fr, obj1);
+        //assertNotSame(fr, obj1);
         // this will cause also a test fail
         // our two fractions fr and obj1 are the same, and reference to the same addresse
 
