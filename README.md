@@ -26,19 +26,19 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 1. Quelles conventions utilise Maven pour l’arborescence des répertoires ?
     Où se trouvent les sources de l'application et les sources des tests ?
     > utilise le fichier pom.xml
-    > les fichiers source de l'application : src/Main/java
-    > les fichiers source du test : src/test/java
+     les fichiers source de l'application : src/Main/java
+     les fichiers source du test : src/test/java
 2. Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
     1. Dans quel répertoire se trouvent les fichiers sources du projet ? Les sources des tests ?
        > les fichiers source du projet : src/Main/java
-       > les fichiers source du test : src/test/java
+        les fichiers source du test : src/test/java
        
     2. Quelles sont les coordonnées du projet ?
        > <modelVersion>4.0.0</modelVersion>
-       > <groupId>fr.uvsq.cprog</groupId>
-       > <artifactId>mvnjunit</artifactId>
-       > <version>1.0-SNAPSHOT</version>
-       > <name>mvnjunit</name>
+        <groupId>fr.uvsq.cprog</groupId>
+        <artifactId>mvnjunit</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <name>mvnjunit</name>
        
     3. À quoi sert la propriété `project.build.sourceEncoding` ?
         configure le codage du projet en maven, 
@@ -57,7 +57,7 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 5. Quelle commande Maven permet de :
     1. créer un `jar` du projet ?
         > mvn package
-        >  il a cree le fichier executable jar mvnjunit-1.0-SNAPSHOT.jar
+         il a cree le fichier executable jar mvnjunit-1.0-SNAPSHOT.jar
     2. lancer les tests ?
         > en executant le AppTest.java
     3. supprimer tous les fichiers issus de la compilation ?
