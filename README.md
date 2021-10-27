@@ -25,21 +25,24 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 
 1. Quelles conventions utilise Maven pour l’arborescence des répertoires ?
     Où se trouvent les sources de l'application et les sources des tests ?
-    > utilise le fichier pom.xml
+    ``` utilise le fichier pom.xml
      les fichiers source de l'application : src/Main/java
      les fichiers source du test : src/test/java
+   ```
+   
 2. Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
     1. Dans quel répertoire se trouvent les fichiers sources du projet ? Les sources des tests ?
-       > les fichiers source du projet : src/Main/java
+       ``` les fichiers source du projet : src/Main/java
         les fichiers source du test : src/test/java
+       ```
        
     2. Quelles sont les coordonnées du projet ?
-       > <modelVersion>4.0.0</modelVersion>
+       ``` <modelVersion>4.0.0</modelVersion>
         <groupId>fr.uvsq.cprog</groupId>
         <artifactId>mvnjunit</artifactId>
         <version>1.0-SNAPSHOT</version>
         <name>mvnjunit</name>
-       
+       ```
     3. À quoi sert la propriété `project.build.sourceEncoding` ?
         configure le codage du projet en maven, 
         > dans notre project 'UTF-8' est specifie
@@ -56,23 +59,25 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 4. Ajoutez un fichier `.gitignore` adapté aux projets Maven (cf. [A collection of .gitignore templates](https://github.com/github/gitignore)) et ajoutez-y les fichiers et répertoires de votre IDE.
 5. Quelle commande Maven permet de :
     1. créer un `jar` du projet ?
-        > mvn package
+        ``` mvn package
          il a cree le fichier executable jar mvnjunit-1.0-SNAPSHOT.jar
+       ```
     2. lancer les tests ?
         > en executant le AppTest.java
     3. supprimer tous les fichiers issus de la compilation ?
 6. Ajoutez une classe `Fraction` et une classe `FractionTest` dans les répertoires et packages appropriés.
     Supprimez les classes d'exemple `App` et `AppTest`.
-7. Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
-   > assertTrue( true );
-   >  assertEquals(obj.getNum(),5);
-   > assertNotNull(obj);
-   > assertNull(null);
-   > assertNotSame(obj, obj1);
-   > assertSame(obj, obj1);
-8. Pour chaque cas de test, écrivez le test JUnit correspondant dans la classe de test, vérifiez qu’il échoue,
+   1. Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
+   ``` assertTrue( true );
+       assertEquals(obj.getNum(),5);
+       assertNotNull(obj);
+       assertNull(null);
+       assertNotSame(obj, obj1);
+       assertSame(obj, obj1);
+   ```
+7. Pour chaque cas de test, écrivez le test JUnit correspondant dans la classe de test, vérifiez qu’il échoue,
 implémentez la fonctionnalité dans la classe, vérifiez que le test passe, appliquez un étape de refactoring sur les tests et la classe si nécessaire.
-9. Modifiez le POM pour intégrer la vérification des conventions de codage avec [`checkstyle`](http://maven.apache.org/plugins/maven-checkstyle-plugin/) en utilisant les conventions _Google_.
-10. Ajoutez une méthode `main` qui démontre quelques fonctionnalités de la classe, puis modifiez le POM pour que le jar généré soit exécutable (cf. [Apache Maven JAR Plugin](https://maven.apache.org/plugins/maven-jar-plugin/index.html))
-11. Modifiez la méthode `main` pour que les différents affichages se fassent à l'aide de la bibliothèque de logging [`SLF4J`](http://www.slf4j.org/)
-12. En utilisant le plugin [assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) (ou le plugin [shade](https://maven.apache.org/plugins/maven-shade-plugin/)), générez une archive du projet contenant ses dépendances (uber-jar)
+8. Modifiez le POM pour intégrer la vérification des conventions de codage avec [`checkstyle`](http://maven.apache.org/plugins/maven-checkstyle-plugin/) en utilisant les conventions _Google_.
+9. Ajoutez une méthode `main` qui démontre quelques fonctionnalités de la classe, puis modifiez le POM pour que le jar généré soit exécutable (cf. [Apache Maven JAR Plugin](https://maven.apache.org/plugins/maven-jar-plugin/index.html))
+10. Modifiez la méthode `main` pour que les différents affichages se fassent à l'aide de la bibliothèque de logging [`SLF4J`](http://www.slf4j.org/)
+11. En utilisant le plugin [assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) (ou le plugin [shade](https://maven.apache.org/plugins/maven-shade-plugin/)), générez une archive du projet contenant ses dépendances (uber-jar)
