@@ -20,7 +20,23 @@ Enfin, la prise en compte des contraintes se fera par de la gestion d’erreurs 
 
 
 Il pourra éventuellement être nécessaire de [configurer le proxy](http://maven.apache.org/guides/mini/guide-proxies.html) (http://wwwcache.uvsq.fr:3128) pour accéder au dépôt Maven.
+```
+/home/user/.m2/settings.xml
 
+<settings>
+<proxies>
+<proxy>
+<id>uvsq-proxy</id>
+<active>true</active>
+<protocol>http</protocol>
+<host>wwwcache.uvsq.fr</host>
+<port>3128</port>
+<username>proxyuser</username>
+<password>somepassword</password>
+</proxy>
+</proxies>
+</settings>
+```
 À chaque étape, validez vos modifications avec `git` et si nécessaire, exécutez le cycle maven adapté pour vérifier vos manipulations.
 
 1. Quelles conventions utilise Maven pour l’arborescence des répertoires ?
