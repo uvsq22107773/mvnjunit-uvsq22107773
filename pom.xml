@@ -7,8 +7,17 @@
   <artifactId>mvnjunit</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>mvnjunit</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <contributors>
+    <contributor>
+      <name>Abd elmoumen Drici</name>
+      <email>abd-elmoumen.drici@ens.uvsq.fr</email>
+      <organization>UVSQ</organization>
+      <organizationUrl>uvsq.fr</organizationUrl>
+    <roles>
+      <role>student</role>
+    </roles>
+    </contributor>
+  </contributors>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -93,6 +102,8 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.2.0</version>
+          <configuration>
+          </configuration>
         </plugin>
 
       <plugin>

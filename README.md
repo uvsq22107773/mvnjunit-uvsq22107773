@@ -127,8 +127,60 @@ implémentez la fonctionnalité dans la classe, vérifiez que le test passe, app
    </plugin>
     ```
 8. Ajoutez une méthode `main` qui démontre quelques fonctionnalités de la classe, puis modifiez le POM pour que le jar généré soit exécutable (cf. [Apache Maven JAR Plugin](https://maven.apache.org/plugins/maven-jar-plugin/index.html))
+```
+Generated MANIFEST.MF file in META-INF directory
+
+Manifest-Version: 1.0
+Build-Jdk-Spec: 1.8
+Created-By: Maven Jar Plugin 3.2.0
+
+```
 9. Modifiez la méthode `main` pour que les différents affichages se fassent à l'aide de la bibliothèque de logging [`SLF4J`](http://www.slf4j.org/)
+```
+   <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.32</version>
+        <scope>system</scope>
+        <systemPath>${basedir}/slf4j-api-1.7.32.jar</systemPath>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-jdk14</artifactId>
+        <version>1.7.32</version>
+        <scope>system</scope>
+        <systemPath>${basedir}/slf4j-api-1.7.32.jar</systemPath>
+    </dependency>
+
+
+   on importe le package dans notre directory local en utilisant maven.
+   Apres on ajoutant le code suivant :
+   private static final  Logger logg = LoggerFactory.getLogger(App.class);
+   logg.info("an example of a log message");
+
+   resultat :s
+   [main] INFO fr.uvsq.cprog.mvnjunit.App - an example of a log message
+
+```
 10. En utilisant le plugin [assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) (ou le plugin [shade](https://maven.apache.org/plugins/maven-shade-plugin/)), générez une archive du projet contenant ses dépendances (uber-jar)
+```
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <descriptor>src/assembly/config.xml</descriptor>
+        </configuration>
+        <executions>
+          <execution>
+            <id>create-archive</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+```
 
 
 ```
