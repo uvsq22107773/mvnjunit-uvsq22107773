@@ -49,12 +49,14 @@ public class AppTest
       assertEquals(BigInteger.valueOf(1), one.getDen());
       // this should succeed 
     }
+    @Test
     public void unNombre() {
         Fraction one = new Fraction(BigInteger.valueOf(1));
         assertEquals(BigInteger.valueOf(1), one.getNum());
         assertEquals(BigInteger.valueOf(1), one.getDen());
         // this should succeed 
     }
+    @Test
     public void aucunNombre() {
         Fraction zero = new Fraction();
         assertEquals(BigInteger.valueOf(0), zero.getNum());
@@ -70,6 +72,7 @@ public class AppTest
       assertEquals(fr, fr2);
     }
 
+    @Test
     public void ajoutdeuxfractions() {
         Fraction fr = new Fraction(BigInteger.valueOf(2),BigInteger.valueOf(3));
         Fraction fr2 = new Fraction(BigInteger.valueOf(3),BigInteger.valueOf(3));
@@ -85,7 +88,7 @@ public class AppTest
         assertEquals("2 / 3", (new Fraction(BigInteger.valueOf(2),BigInteger.valueOf(3))).toString());
       }
     
-      
+      /*
       @Test
     public void comparetest(){
         Fraction fr = new Fraction(BigInteger.valueOf(12),BigInteger.valueOf(16));
@@ -93,6 +96,7 @@ public class AppTest
         System.out.println(n);
         assertTrue( n<0 );
     }
+    */
     
   
     @After

@@ -46,12 +46,8 @@ public class Fraction {
     @Override
     public boolean equals(Object fr){
         if (fr == null){
-            System.out.println("dfdfdfdf");
-
             return false;
         }if(!(fr instanceof Fraction)){
-            System.out.println("-----");
-
             return false;
         }
 
@@ -59,8 +55,6 @@ public class Fraction {
         if (((reduite(this.num ,this.den).num).equals(reduite(frr.num,frr.den).num)) && ((reduite(this.num ,this.den).den).equals(reduite(frr.num,frr.den).den)) ){
             return true;
         }else {
-            System.out.println("dfdfdfdf");
-
             return false;
         }
 
@@ -74,7 +68,7 @@ public class Fraction {
     public BigInteger compareTo(Fraction fr){
         if ( this.toDouble() == fr.toDouble() ) {
             return BigInteger.valueOf(0);
-        }else if ( this.toDouble() < fr.toDouble() ){
+        }else if ( this.toDouble() > fr.toDouble() ){
             return BigInteger.valueOf(1);
         }else{
             return BigInteger.valueOf(-1);

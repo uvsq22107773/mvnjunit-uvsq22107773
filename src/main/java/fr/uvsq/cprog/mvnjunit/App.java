@@ -2,14 +2,22 @@ package fr.uvsq.cprog.mvnjunit;
 import java.util.HashSet;
 import java.util.Set;
 import java.math.BigInteger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Hello world!
  *
  */
+
 public class App 
 {
+    private static final  Logger logg = LoggerFactory.getLogger(App.class);
+
     public static void main(String[] args) {
+
+        logg.info("an example of a log message");
         Fraction fr = new Fraction(BigInteger.valueOf(12),BigInteger.valueOf(16));
         System.out.println("Num: "+fr.getNum());
         System.out.println("Den: "+fr.getDen());
