@@ -132,6 +132,8 @@ implémentez la fonctionnalité dans la classe, vérifiez que le test passe, app
 
 
 ```
+mvn test
+
 [INFO] Scanning for projects...
 [WARNING] 
 [WARNING] Some problems were encountered while building the effective model for fr.uvsq.cprog:mvnjunit:jar:1.0-SNAPSHOT
@@ -168,18 +170,88 @@ implémentez la fonctionnalité dans la classe, vérifiez que le test passe, app
 [INFO] Running fr.uvsq.cprog.mvnjunit.AppTest
 starting tests..
 end of tests..
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s - in fr.uvsq.cprog.mvnjunit.AppTest
+starting tests..
+end of tests..
+starting tests..
+-1
+end of tests..
+starting tests..
+end of tests..
+starting tests..
+end of tests..
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in fr.uvsq.cprog.mvnjunit.AppTest
 [INFO] 
 [INFO] Results:
 [INFO] 
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.769 s
+[INFO] Finished at: 2021-11-14T15:47:40+01:00
+[INFO] ------------------------------------------------------------------------
+```
+```
+mvn package
+
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for fr.uvsq.cprog:mvnjunit:jar:1.0-SNAPSHOT
+[WARNING] 'build.pluginManagement.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ line 80, column 17
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -----------------------< fr.uvsq.cprog:mvnjunit >-----------------------
+[INFO] Building mvnjunit 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ mvnjunit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/abdelmoumen/IdeaProjects/mvnjunit-uvsq22107773/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ mvnjunit ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ mvnjunit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/abdelmoumen/IdeaProjects/mvnjunit-uvsq22107773/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ mvnjunit ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ mvnjunit ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running fr.uvsq.cprog.mvnjunit.AppTest
+starting tests..
+end of tests..
+starting tests..
+end of tests..
+starting tests..
+-1
+end of tests..
+starting tests..
+end of tests..
+starting tests..
+end of tests..
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s - in fr.uvsq.cprog.mvnjunit.AppTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 [INFO] 
 [INFO] 
 [INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ mvnjunit ---
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2.677 s
-[INFO] Finished at: 2021-10-27T20:39:03+02:00
+[INFO] Total time: 2.205 s
+[INFO] Finished at: 2021-11-14T15:48:38+01:00
 [INFO] ------------------------------------------------------------------------
 ```
