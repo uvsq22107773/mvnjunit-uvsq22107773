@@ -67,7 +67,8 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
         ``` 1.7 7 jvm
        ```
     6. Quelle version de JUnit est configurée ? À quoi sert la balise `scope` ?
-       ```JUnit : 4.11
+       ```JUnit : 4.11,
+         la balise scope nous permettre d'identifier le repertoire de test
        ```
     7. À quoi sert la section `pluginManagement` ?
        ``` est un élément qui fait La gestion des plugins contient les éléments des plugins de la même manière
@@ -80,41 +81,35 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 4. Ajoutez un fichier `.gitignore` adapté aux projets Maven (cf. [A collection of .gitignore templates](https://github.com/github/gitignore)) et ajoutez-y les fichiers et répertoires de votre IDE.
 5. Quelle commande Maven permet de :
     1. créer un `jar` du projet ?
-        ``` mvn package
+        ``` 
+         mvn package
          il a cree le fichier executable jar mvnjunit-1.0-SNAPSHOT.jar
        ```
     2. lancer les tests ?
-        ``` en executant le AppTest.java
+        ``` mvn test
        ```
     3. supprimer tous les fichiers issus de la compilation ?
+         ```
+         mvn clean
+         ```
     4. Ajoutez une classe `Fraction` et une classe `FractionTest` dans les répertoires et packages appropriés.
         Supprimez les classes d'exemple `App` et `AppTest`.
        1. Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
-       ``` System.out.println("starting tests..");
-            Fraction fr = new Fraction(5,3);
-            assertEquals(fr.getNum(),5);
-            // the expected is 5 and the numerator value is 5
-            // this tests shouls be matched
-
-            assert fr.getDen() != 3 : "Denumurator not equal";
-            // this should raise an assertion exception
-   
-            Fraction obj1 ;
-            obj1 = fr;
-
-            assertNotNull(obj1);                         // if fraction not null
-            assertNull(obj1);
-            // if fraction is null, this will cause the test to fail
-            // because we expecting a null value, wich is not the case
-
-            assertNotSame(fr, obj1);
-            // this will cause also a test fail
-            // our two fractions fr and obj1 are the same, and reference to the same addresse
-
-            assertSame(fr, obj1);
-       ```
+      ```
+      tester que une fraction non null
+      tester une fraction qui est null
+      tester deux fraction identiques
+      tester la fraction de un seul parametre
+      tester la fraction de deux parametres
+      tester la fraction de aucune parametre
+      tester la fonction equals
+      tester la fonction de l'ajout de deux fractions
+      tester la fonction qui transforme une fraction to string
+      tester la fonction compare qui compare deux fractions
+      ```
 6. Pour chaque cas de test, écrivez le test JUnit correspondant dans la classe de test, vérifiez qu’il échoue,
 implémentez la fonctionnalité dans la classe, vérifiez que le test passe, appliquez un étape de refactoring sur les tests et la classe si nécessaire.
+ 
 7. Modifiez le POM pour intégrer la vérification des conventions de codage avec [`checkstyle`](http://maven.apache.org/plugins/maven-checkstyle-plugin/) en utilisant les conventions _Google_.
    ```
    <plugin>
