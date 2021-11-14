@@ -50,7 +50,7 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
     ``` utilise le fichier pom.xml
      les fichiers source de l'application : src/Main/java
      les fichiers source du test : src/test/java
-   ```
+    ```
    
 2. Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
     1. Dans quel répertoire se trouvent les fichiers sources du projet ? Les sources des tests ?
@@ -67,7 +67,7 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
        ```
     3. À quoi sert la propriété `project.build.sourceEncoding` ?
         configure le codage du projet en maven, 
-        ``` dans notre project 'UTF-8' est specifie
+       ``` dans notre project 'UTF-8' est specifie
        ```
     5. Quelles versions des sources et de la JVM sont utilisés ?
         ``` 1.7 7 jvm
@@ -87,22 +87,19 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 4. Ajoutez un fichier `.gitignore` adapté aux projets Maven (cf. [A collection of .gitignore templates](https://github.com/github/gitignore)) et ajoutez-y les fichiers et répertoires de votre IDE.
 5. Quelle commande Maven permet de :
     1. créer un `jar` du projet ?
-        ``` 
-         mvn package
+        ``` mvn package
          il a cree le fichier executable jar mvnjunit-1.0-SNAPSHOT.jar
-       ```
+        ```
     2. lancer les tests ?
         ``` mvn test
-       ```
+        ```
     3. supprimer tous les fichiers issus de la compilation ?
-         ```
-         mvn clean
+         ```mvn clean
          ```
     4. Ajoutez une classe `Fraction` et une classe `FractionTest` dans les répertoires et packages appropriés.
         Supprimez les classes d'exemple `App` et `AppTest`.
        1. Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
-      ```
-      tester que une fraction non null
+      ``` tester que une fraction non null
       tester une fraction qui est null
       tester deux fraction identiques
       tester la fraction de un seul parametre
@@ -117,8 +114,7 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 implémentez la fonctionnalité dans la classe, vérifiez que le test passe, appliquez un étape de refactoring sur les tests et la classe si nécessaire.
  
 7. Modifiez le POM pour intégrer la vérification des conventions de codage avec [`checkstyle`](http://maven.apache.org/plugins/maven-checkstyle-plugin/) en utilisant les conventions _Google_.
-   ```
-   <plugin>
+   ``` <plugin>
    <groupId>org.apache.maven.plugins</groupId>
    <artifactId>maven-checkstyle-plugin</artifactId>
    <version>3.1.2</version>
@@ -128,17 +124,13 @@ implémentez la fonctionnalité dans la classe, vérifiez que le test passe, app
    </plugin>
     ```
 8. Ajoutez une méthode `main` qui démontre quelques fonctionnalités de la classe, puis modifiez le POM pour que le jar généré soit exécutable (cf. [Apache Maven JAR Plugin](https://maven.apache.org/plugins/maven-jar-plugin/index.html))
-```
-Generated MANIFEST.MF file in META-INF directory
-
+```Generated MANIFEST.MF file in META-INF directory
 Manifest-Version: 1.0
 Build-Jdk-Spec: 1.8
 Created-By: Maven Jar Plugin 3.2.0
-
 ```
 9. Modifiez la méthode `main` pour que les différents affichages se fassent à l'aide de la bibliothèque de logging [`SLF4J`](http://www.slf4j.org/)
-```
-   <dependency>
+```<dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>1.7.32</version>
@@ -164,8 +156,7 @@ Created-By: Maven Jar Plugin 3.2.0
 
 ```
 10. En utilisant le plugin [assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) (ou le plugin [shade](https://maven.apache.org/plugins/maven-shade-plugin/)), générez une archive du projet contenant ses dépendances (uber-jar)
-```
-      <plugin>
+```<plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.3.0</version>
         <configuration>
@@ -184,8 +175,7 @@ Created-By: Maven Jar Plugin 3.2.0
 ```
 
 
-```
-mvn test
+```mvn test
 
 [INFO] Scanning for projects...
 [WARNING] 
